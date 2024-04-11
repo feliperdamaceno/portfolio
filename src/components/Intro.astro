@@ -1,0 +1,127 @@
+---
+import { SOCIAL_LINKS } from '@/constants'
+---
+
+<section>
+  <div class="hero flow">
+    <h2>Felipe Damaceno</h2>
+    <h3>Frontend Developer @ Mastercard</h3>
+
+    <p>
+      Skilled Frontend Developer with a design background, crafting responsive
+      web applications using React and Next.js. Experienced problem-solver with
+      a passion for technology and a drive to continuously learn and create
+      beautiful, user-friendly experiences.
+    </p>
+
+    <div>
+      <ul role="list">
+        {
+          SOCIAL_LINKS.map((link) => (
+            <li>
+              <a href={link.href} target="_blank">
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @use '@/scss/colors' as *;
+
+  section {
+    padding: 2rem;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+
+    &::before,
+    &::after {
+      content: '';
+      background-color: map-get($colors, white);
+      box-shadow:
+        0 0 0 5rem map-get($colors, white),
+        0 0 0 10rem map-get($colors, light);
+      border-radius: 50rem;
+      width: 40rem;
+      height: 30rem;
+      position: absolute;
+      z-index: -10;
+    }
+
+    &::before {
+      transform: translate(-30%, 10%);
+    }
+
+    &::after {
+      transform: translate(60%, -10%);
+    }
+  }
+
+  .hero {
+    font-size: 1.25rem;
+    max-width: 90ch;
+    position: relative;
+
+    &::before,
+    &::after {
+      color: map-get($colors, light);
+      font-size: 8rem;
+      font-weight: bold;
+      border-radius: 50rem;
+      height: 20rem;
+      position: absolute;
+      z-index: -1;
+    }
+
+    &::before {
+      content: 'design';
+      bottom: -110%;
+    }
+
+    &::after {
+      content: '<code>';
+      rotate: 90deg;
+      right: -20%;
+      transform: translateX(-5%);
+    }
+
+    h2 {
+      font-family: 'Libre Bodoni', serif;
+      font-size: 3.2rem;
+      font-weight: 600;
+      line-height: 1;
+      text-transform: lowercase;
+    }
+
+    h3 {
+      color: map-get($colors, gray);
+      font-size: 1.1rem;
+      margin-top: 0.75rem;
+    }
+
+    ul {
+      font-weight: 500;
+      font-size: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-items: center;
+      gap: 1rem;
+
+      li {
+        display: flex;
+        gap: 1rem;
+
+        &:not(:last-child)::after {
+          content: '\/';
+        }
+      }
+    }
+  }
+</style>
