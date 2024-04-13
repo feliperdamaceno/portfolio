@@ -1,6 +1,10 @@
 ---
 import links from '@/data/links.json'
 import type { Link } from '@/types'
+
+function getJavaScriptExpYears() {
+  return new Date().getFullYear() - 2022
+}
 ---
 
 <section>
@@ -8,10 +12,11 @@ import type { Link } from '@/types'
     <h2>Felipe Damaceno</h2>
 
     <p>
-      <span class="highlight">{'<'}Frontend Developer{'/>'}</span> with 2 years of
-      experience in JavaScript and TypeScript, specialized in crafting responsive,
-      user-centric web applications. Strong in <span class="highlight"
-        >design</span
+      <span class="highlight">{'<'}Frontend Developer{'/>'}</span> with {
+        getJavaScriptExpYears
+      } years of experience in JavaScript and TypeScript, specialized in crafting
+      responsive, user-centric web applications. Strong in <span
+        class="highlight">design</span
       > and <span class="highlight">UX/UI</span>, I combine technical expertise
       with a <span class="highlight">passion</span> for creating the best user-experience.
     </p>
