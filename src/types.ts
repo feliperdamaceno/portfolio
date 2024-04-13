@@ -11,6 +11,11 @@ export type Experience = {
   endYear: number
 }
 
+export type SkillSet = {
+  category: string
+  skills: string[]
+}
+
 export type GitHubRepo = {
   id: number
   node_id: string

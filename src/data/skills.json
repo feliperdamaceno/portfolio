@@ -1,0 +1,32 @@
+[
+  {
+    "category": "Languages",
+    "skills": [
+      "JavaScript",
+      "TypeScript",
+      "HTML",
+      "CSS & SASS",
+      "GraphQL",
+      "Python",
+      "SQL"
+    ]
+  },
+  {
+    "category": "Frameworks",
+    "skills": ["ReactJS", "NextJS", "VueJS", "Tailwind CSS"]
+  },
+  {
+    "category": "Dev & Tools",
+    "skills": ["Git", "Webpack", "Docker", "Postman", "SEO"]
+  },
+  {
+    "category": "Soft Skills",
+    "skills": [
+      "Problem Solving",
+      "Multitasking",
+      "Teamwork",
+      "Time Management",
+      "Mentoring"
+    ]
+  }
+]

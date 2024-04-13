@@ -1,4 +1,5 @@
 .flow {
+  --spacing: 1.4rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -6,5 +7,5 @@
 
 .flow > * + *,
 .flow[data-recursive] * + * {
-  margin-top: 1.4rem;
+  margin-top: var(--spacing);
 }

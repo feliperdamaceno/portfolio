@@ -4,7 +4,7 @@ import type { Experience } from '@/types'
 ---
 
 <section class="container">
-  <h2 class="title">me.<span>experiences()</span></h2>
+  <h2 class="section__title">me.<span>experiences()</span></h2>
 
   <div class="experiences flow">
     {
@@ -34,21 +34,6 @@ import type { Experience } from '@/types'
 
     @media (min-width: 800px) {
       grid-template-columns: 200px 1fr;
-    }
-
-    .title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      line-height: 1;
-      rotate: -1deg;
-
-      @media (min-width: 800px) {
-        margin-bottom: 2rem;
-      }
-
-      span {
-        color: map-get($colors, accent);
-      }
     }
 
     .experiences {
