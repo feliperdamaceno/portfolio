@@ -6,13 +6,20 @@ import type { Link } from '@/types'
 <section>
   <div class="container hero flow">
     <h2>Felipe Damaceno</h2>
-    <h3>Frontend Developer @ Mastercard</h3>
 
     <p>
-      Skilled Frontend Developer with a design background, crafting responsive
-      web applications using React and Next.js. Experienced problem-solver with
-      a passion for technology and a drive to continuously learn and create
-      beautiful, user-friendly experiences.
+      <span class="highlight">Frontend Developer</span> with 2 years of experience
+      in JavaScript and TypeScript, specialized in crafting responsive, user-centric
+      web applications. Strong in <span class="highlight">design</span> and <span
+        class="highlight">UX/UI</span
+      >, I combine technical expertise with a <span class="highlight"
+        >passion</span
+      > for creating the best user-experience.
+    </p>
+
+    <p>
+      My goal? To consistently deliver beautiful, user-friendly experiences that
+      exceed expectations.
     </p>
 
     <div>
@@ -29,97 +36,63 @@ import type { Link } from '@/types'
       </ul>
     </div>
   </div>
-</section>
 
-<style lang="scss">
-  @use '@/scss/colors' as *;
+  <style lang="scss">
+    @use '@/scss/colors' as *;
 
-  section {
-    min-height: 100vh;
-    position: relative;
-    display: grid;
-    place-items: center;
-
-    &::before,
-    &::after {
-      content: '';
-      background-color: map-get($colors, white);
-      box-shadow:
-        0 0 0 5rem map-get($colors, white),
-        0 0 0 10rem map-get($colors, light);
-      border-radius: 50rem;
-      width: 40rem;
-      height: 30rem;
-      position: absolute;
-      z-index: -10;
+    section {
+      min-height: 100vh;
+      position: relative;
+      display: grid;
+      place-items: center;
     }
 
-    &::before {
-      transform: translate(-30%, 10%);
-    }
+    .hero {
+      font-size: 1.25rem;
+      position: relative;
+      rotate: -1deg;
 
-    &::after {
-      transform: translate(60%, -10%);
-    }
-  }
+      .highlight {
+        color: map-get($colors, accent);
+        font-weight: 600;
+      }
 
-  .hero {
-    font-size: 1.25rem;
-    position: relative;
+      h2 {
+        font-family: 'Shadows Into Light', cursive;
+        color: map-get($colors, accent);
+        font-size: 4rem;
+        font-weight: 600;
+        line-height: 1.25;
+        rotate: -2.25deg;
 
-    &::before,
-    &::after {
-      color: map-get($colors, light);
-      font-size: 8rem;
-      font-weight: bold;
-      border-radius: 50rem;
-      height: 20rem;
-      position: absolute;
-      z-index: -1;
-    }
+        @media (min-width: 600px) {
+          font-size: 5rem;
+        }
+      }
 
-    &::before {
-      content: 'design';
-      bottom: -80%;
-    }
+      h3 {
+        color: map-get($colors, gray);
+        font-size: 1.1rem;
+        margin-top: 0.75rem;
+      }
 
-    &::after {
-      content: '<code>';
-      rotate: 90deg;
-      right: -20%;
-      transform: translateX(-5%);
-    }
-
-    h2 {
-      font-family: 'Libre Bodoni', serif;
-      font-size: 3.2rem;
-      font-weight: 600;
-      line-height: 1;
-      text-transform: lowercase;
-    }
-
-    h3 {
-      color: map-get($colors, gray);
-      font-size: 1.1rem;
-      margin-top: 0.75rem;
-    }
-
-    ul {
-      font-weight: 500;
-      font-size: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-items: center;
-      gap: 1rem;
-
-      li {
+      ul {
+        font-weight: 500;
+        font-size: 1rem;
         display: flex;
+        flex-wrap: wrap;
+        justify-items: center;
         gap: 1rem;
 
-        &:not(:last-child)::after {
-          content: '\/';
+        li {
+          display: flex;
+          gap: 1rem;
+
+          &:not(:last-child)::after {
+            content: '\/';
+          }
         }
       }
     }
-  }
-</style>
+  </style>
+</section>

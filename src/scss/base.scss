@@ -38,6 +38,6 @@ a {
 
   &:hover::after,
   &:focus::after {
-    background-color: map-get($colors, dark);
+    background-color: map-get($colors, accent);
   }
 }
