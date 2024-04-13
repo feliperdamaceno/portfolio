@@ -1,0 +1,47 @@
+---
+import experiences from '@/data/experiences.json'
+import type { Experience } from '@/types'
+---
+
+<section class="container">
+  <h2>Experiences</h2>
+
+  <div class="skills flow">
+    {
+      experiences.map((experience: Experience) => (
+        <div>
+          <div>
+            <h2>{experience.position}</h2>
+            <small>
+              {experience.startYear} {'→'} {experience.endYear || 'Present'}
+            </small>
+          </div>
+          <p>{experience.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style lang="scss">
+  @use '@/scss/colors' as *;
+
+  section {
+    display: grid;
+    justify-content: center;
+
+    > h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      color: #42d392;
+    }
+
+    .skills {
+      border-left: 0.15rem solid map-get($colors, dark);
+      padding-inline-start: 2rem;
+    }
+  }
+</style>

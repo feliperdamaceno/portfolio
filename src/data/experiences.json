@@ -1,0 +1,30 @@
+[
+  {
+    "position": "Frontend Developer",
+    "company": "Mastercard",
+    "description": "Led front-end design and development of the new Mastercard Academy on the Web platform, focusing on UI/UX enhancements and optimization.",
+    "startYear": 2023,
+    "endYear": 0
+  },
+  {
+    "position": "Developer Support Specialist",
+    "company": "Global Payments Inc.",
+    "description": "Troubleshoot and resolve technical issues related to the payment process, including failed transactions and account settings.",
+    "startYear": 2023,
+    "endYear": 2023
+  },
+  {
+    "position": "Technical Support Specialist",
+    "company": "TELUS International | Snap Inc.",
+    "description": "Utilize web development and coding expertise to enhance the advertiser experience and improve advertising returns.",
+    "startYear": 2022,
+    "endYear": 2023
+  },
+  {
+    "position": "Graphic & Web Designer",
+    "company": "Self-employed",
+    "description": "Designed and created visual materials such as newsletters, posters, postcards, logos, web posts, and social media resources for various clients and projects.",
+    "startYear": 2019,
+    "endYear": 2020
+  }
+]
