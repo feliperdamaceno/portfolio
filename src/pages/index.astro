@@ -1,16 +1,17 @@
 ---
 import '@/scss/main.scss'
 import { RootLayout } from '@/layouts'
-import { Intro, Skills, Experiences } from '@/components'
+import { Intro, Skills, Experiences, Projects } from '@/components'
 ---
 
 <RootLayout title="Felipe Damaceno">
   <main>
     <Intro />
 
-    <div class="flow" style={{ '--spacing': '10rem' }}>
+    <div class="flow">
       <Skills />
       <Experiences />
+      <Projects />
     </div>
   </main>
 </RootLayout>
@@ -18,5 +19,13 @@ import { Intro, Skills, Experiences } from '@/components'
 <style lang="scss">
   main {
     overflow: hidden;
+  }
+
+  .flow {
+    --spacing: 6rem;
+
+    @media (min-width: 800px) {
+      --spacing: 10rem;
+    }
   }
 </style>

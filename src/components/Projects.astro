@@ -1,0 +1,110 @@
+---
+import type { GitHubRepo } from '@/types'
+import { FEATURED_REPOSITORIES } from '@/constants'
+
+const BASE_URL = import.meta.env.BASE_GITHUB_API_URL || ''
+
+async function fetchRepos(): Promise<GitHubRepo[]> {
+  const response = await fetch(
+    `${BASE_URL}/users/feliperdamaceno/repos?per_page=50`
+  )
+  const data = ((await response.json()) as GitHubRepo[]) || []
+  const featured = data.filter((repo) => FEATURED_REPOSITORIES.test(repo.name))
+  return featured.sort((a, b) => -1 * a.name.localeCompare(b.name))
+}
+
+const repositories = await fetchRepos()
+---
+
+<section class="container">
+  <h2 class="section__title">me.<span>projects()</span></h2>
+
+  <div class="flow">
+    {
+      repositories.map((repository) => (
+        <div class="repository">
+          <h2>
+            <a href={repository.html_url} target="_blank">
+              {repository.name.replace(/-/g, ' ')}
+            </a>
+          </h2>
+          <p>{repository.description}</p>
+          <small class="pill">{repository.language}</small>
+        </div>
+      ))
+    }
+
+    <a
+      class="link"
+      href="https://github.com/feliperdamaceno?tab=repositories"
+      target="_blank">View All</a
+    >
+  </div>
+</section>
+
+<style lang="scss">
+  @use '@/scss/colors' as *;
+
+  section {
+    display: grid;
+    gap: 1rem;
+
+    @media (min-width: 800px) {
+      grid-template-columns: 200px 1fr;
+    }
+
+    .flow {
+      --spacing: 2rem;
+    }
+
+    .repository {
+      display: grid;
+      justify-items: start;
+      gap: 0.25rem;
+
+      h2 {
+        font-size: 1.15rem;
+        font-weight: 500;
+        line-height: 1.2;
+        text-transform: capitalize;
+      }
+
+      a {
+        position: relative;
+
+        &:before,
+        &:after {
+          color: transparent;
+          position: absolute;
+          transition: color ease-out 125ms;
+        }
+
+        &:before {
+          content: '[';
+          left: -0.5em;
+        }
+
+        &:after {
+          content: ']';
+          right: -0.5em;
+        }
+
+        &:hover:before,
+        &:hover:after {
+          color: map-get($colors, accent);
+        }
+      }
+
+      .pill {
+        color: map-get($colors, light);
+        background-color: map-get($colors, accent);
+        font-size: 0.65em;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding-block: 0.25rem;
+        padding-inline: 0.5rem;
+        border-radius: 0.25rem;
+      }
+    }
+  }
+</style>
