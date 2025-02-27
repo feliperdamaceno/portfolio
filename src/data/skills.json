@@ -1,32 +1,46 @@
 [
   {
-    "category": "Languages",
+    "category": "Programming Languages",
     "skills": [
+      "HTML",
+      "CSS",
+      "SASS",
       "JavaScript",
       "TypeScript",
-      "HTML",
-      "CSS & SASS",
-      "GraphQL",
       "Python",
       "SQL"
     ]
   },
   {
-    "category": "Frameworks",
-    "skills": ["ReactJS", "NextJS", "VueJS", "Tailwind CSS"]
+    "category": "Tools & Frameworks",
+    "skills": [
+      "Lit",
+      "React",
+      "Storybook",
+      "Webpack",
+      "Git",
+      "Docker",
+      "Postman"
+    ]
   },
   {
-    "category": "Dev & Tools",
-    "skills": ["Git", "Webpack", "Docker", "Postman", "SEO"]
+    "category": "Design Expertise",
+    "skills": [
+      "Design Tokens",
+      "Figma",
+      "Prototyping",
+      "UX/UI Design",
+      "Accessibility (WCAG)"
+    ]
   },
   {
     "category": "Soft Skills",
     "skills": [
+      "Leadership",
+      "Mentoring",
+      "Team Collaboration",
       "Problem Solving",
-      "Multitasking",
-      "Teamwork",
-      "Time Management",
-      "Mentoring"
+      "Time Management"
     ]
   }
 ]

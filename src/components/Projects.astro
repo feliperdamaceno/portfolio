@@ -10,7 +10,7 @@ async function fetchRepos(): Promise<GitHubRepo[]> {
   )
   const data = ((await response.json()) as GitHubRepo[]) || []
   const featured = data.filter((repo) => FEATURED_REPOSITORIES.test(repo.name))
-  return featured.sort((a, b) => -1 * a.name.localeCompare(b.name))
+  return featured.reverse()
 }
 
 const repositories = await fetchRepos()

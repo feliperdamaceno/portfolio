@@ -1,29 +1,36 @@
 [
   {
+    "position": "Senior Frontend Developer",
+    "company": "Mastercard",
+    "description": "Led frontend architecture for Mastercard Academy, developing scalable, accessible Web Components with Lit, overseeing end-to-end development, and aligning technical solutions with business goals.",
+    "startYear": 2025,
+    "endYear": 0
+  },
+  {
     "position": "Frontend Developer",
     "company": "Mastercard",
-    "description": "Led front-end design and development of the new Mastercard Academy on the Web platform, focusing on UI/UX enhancements and optimization.",
+    "description": "Led UI/UX development for Mastercard Academy, boosting engagement through performance optimization, Design Tokens, TypeScript best practices, and driving user-centric features aligned with company-wide frontend standards.",
     "startYear": 2023,
-    "endYear": 0
+    "endYear": 2025
   },
   {
     "position": "Developer Support Specialist",
     "company": "Global Payments Inc.",
-    "description": "Troubleshoot and resolve technical issues related to the payment process, including failed transactions and account settings.",
+    "description": "Assisted developers with API integrations for eCommerce payments, optimizing transaction workflows with XML/JSON and streamlining Agile processes through Jira support and Scrum collaboration.",
     "startYear": 2023,
     "endYear": 2023
   },
   {
     "position": "Technical Support Specialist",
     "company": "TELUS International | Snap Inc.",
-    "description": "Utilize web development and coding expertise to enhance the advertiser experience and improve advertising returns.",
+    "description": "Utilized web development expertise in JavaScript, HTML, and CSS to enhance advertiser experience, improving returns through optimized frontend performance, Tag Management, and efficient data reporting solutions.",
     "startYear": 2022,
     "endYear": 2023
   },
   {
     "position": "Graphic & Web Designer",
     "company": "Self-employed",
-    "description": "Designed and created visual materials such as newsletters, posters, postcards, logos, web posts, and social media resources for various clients and projects.",
+    "description": "Delivered custom web designs with Figma, Photoshop, and Illustrator, boosting client satisfaction and traffic; developed UX-focused web solutions and led branding collaborations driving sustained business growth.",
     "startYear": 2019,
     "endYear": 2020
   }
