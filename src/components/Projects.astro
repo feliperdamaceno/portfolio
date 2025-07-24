@@ -1,9 +1,9 @@
 ---
 import type { GitHubRepo } from '@/types'
 
-import { getFeaturedRepositories, getResource } from '@/utils'
+import { getEnvVariable, getFeaturedRepositories, getResource } from '@/utils'
 
-const BASE_URL = import.meta.env.GITHUB_API_BASE_URL
+const BASE_URL = getEnvVariable('GITHUB_API_BASE_URL')
 const REPOSITORIES_ENDPOINT = `${BASE_URL}/users/feliperdamaceno/repos`
 
 const [resource, error] = await getResource<GitHubRepo[]>(REPOSITORIES_ENDPOINT)

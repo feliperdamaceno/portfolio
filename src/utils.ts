@@ -22,3 +22,7 @@ export function getFeaturedRepositories(repositories: GitHubRepo[]) {
     .filter((repository) => repository.topics.includes('featured'))
     .reverse()
 }
+
+export function getEnvVariable(variable: string): string {
+  return import.meta.env[variable] ?? process.env[variable]
+}
