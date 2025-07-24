@@ -3,11 +3,9 @@ import type { GitHubRepo } from '@/types'
 
 import { FEATURED_REPOSITORIES } from '@/constants'
 
-const BASE_URL = import.meta.env.BASE_GITHUB_API_URL || ''
-
 async function fetchRepos(): Promise<GitHubRepo[]> {
   const response = await fetch(
-    `${BASE_URL}/users/feliperdamaceno/repos?per_page=50`
+    `${import.meta.env.GITHUB_API_BASE_URL}/users/feliperdamaceno/repos?per_page=50`
   )
   const data = ((await response.json()) as GitHubRepo[]) || []
   const featured = data.filter((repo) => FEATURED_REPOSITORIES.test(repo.name))
