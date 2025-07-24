@@ -26,6 +26,7 @@ import experiences from '@/data/experiences.json'
 </section>
 
 <style lang="scss">
+  @use 'sass:map';
   @use '@/scss/colors' as *;
 
   section {
@@ -38,7 +39,7 @@ import experiences from '@/data/experiences.json'
     }
 
     .experiences {
-      border-left: 0.125rem solid map-get($colors, dark);
+      border-left: 0.125rem solid map.get($colors, 'dark');
       padding-inline-start: 2rem;
 
       .experience {
@@ -48,7 +49,7 @@ import experiences from '@/data/experiences.json'
 
         &::before {
           content: '•';
-          color: map-get($colors, dark);
+          color: map.get($colors, 'dark');
           font-size: 2.2rem;
           font-family: Arial, Helvetica, sans-serif;
           margin-inline-start: -2.425rem;
@@ -76,7 +77,7 @@ import experiences from '@/data/experiences.json'
         }
 
         .company {
-          color: map-get($colors, gray);
+          color: map.get($colors, 'gray');
         }
 
         .description {

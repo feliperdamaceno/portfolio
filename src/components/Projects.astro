@@ -42,6 +42,7 @@ const repositories = await fetchRepos()
 </section>
 
 <style lang="scss">
+  @use 'sass:map';
   @use '@/scss/colors' as *;
 
   section {
@@ -90,13 +91,13 @@ const repositories = await fetchRepos()
 
         &:hover:before,
         &:hover:after {
-          color: map-get($colors, accent);
+          color: map.get($colors, 'accent');
         }
       }
 
       .pill {
-        color: map-get($colors, light);
-        background-color: map-get($colors, accent);
+        color: map.get($colors, 'light');
+        background-color: map.get($colors, 'accent');
         font-size: 0.65em;
         font-weight: 500;
         text-transform: uppercase;

@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use 'colors' as *;
 
 .container {
@@ -15,6 +16,6 @@
   margin-bottom: 2rem;
 
   span {
-    color: map-get($colors, accent);
+    color: map.get($colors, 'accent');
   }
 }

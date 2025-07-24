@@ -41,63 +41,64 @@ function getJavaScriptExpYears() {
       </ul>
     </div>
   </div>
+</section>
 
-  <style lang="scss">
-    @use '@/scss/colors' as *;
+<style lang="scss">
+  @use 'sass:map';
+  @use '@/scss/colors' as *;
 
-    section {
-      min-height: 100vh;
-      position: relative;
-      display: grid;
-      place-items: center;
+  section {
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    place-items: center;
+  }
+
+  .hero {
+    font-size: 1.25rem;
+    position: relative;
+    rotate: -1deg;
+
+    .highlight {
+      color: map.get($colors, 'accent');
+      font-weight: 600;
     }
 
-    .hero {
-      font-size: 1.25rem;
-      position: relative;
-      rotate: -1deg;
+    h2 {
+      font-family: 'Shadows Into Light', cursive;
+      color: map.get($colors, 'accent');
+      font-size: 4rem;
+      font-weight: 600;
+      line-height: 1.25;
+      rotate: -2.25deg;
 
-      .highlight {
-        color: map-get($colors, accent);
-        font-weight: 600;
+      @media (min-width: 600px) {
+        font-size: 5rem;
       }
+    }
 
-      h2 {
-        font-family: 'Shadows Into Light', cursive;
-        color: map-get($colors, accent);
-        font-size: 4rem;
-        font-weight: 600;
-        line-height: 1.25;
-        rotate: -2.25deg;
+    h3 {
+      color: map.get($colors, 'gray');
+      font-size: 1.1rem;
+      margin-top: 0.75rem;
+    }
 
-        @media (min-width: 600px) {
-          font-size: 5rem;
-        }
-      }
+    ul {
+      font-weight: 500;
+      font-size: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-items: center;
+      gap: 1rem;
 
-      h3 {
-        color: map-get($colors, gray);
-        font-size: 1.1rem;
-        margin-top: 0.75rem;
-      }
-
-      ul {
-        font-weight: 500;
-        font-size: 1rem;
+      li {
         display: flex;
-        flex-wrap: wrap;
-        justify-items: center;
         gap: 1rem;
 
-        li {
-          display: flex;
-          gap: 1rem;
-
-          &:not(:last-child)::after {
-            content: '\/';
-          }
+        &:not(:last-child)::after {
+          content: '\/';
         }
       }
     }
-  </style>
-</section>
+  }
+</style>

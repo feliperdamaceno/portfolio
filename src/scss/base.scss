@@ -1,13 +1,14 @@
+@use 'sass:map';
 @use 'colors' as *;
 
 ::selection {
-  color: map-get($colors, light);
-  background-color: map-get($colors, dark);
+  color: map.get($colors, 'light');
+  background-color: map.get($colors, 'dark');
 }
 
 body {
-  color: map-get($colors, dark);
-  background-color: map-get($colors, white);
+  color: map.get($colors, dark);
+  background-color: map.get($colors, 'white');
   font-family: 'Signika', sans-serif;
   font-size: 1rem;
   font-weight: 300;
@@ -22,7 +23,7 @@ a {
 }
 
 .link {
-  color: map-get($colors, dark);
+  color: map.get($colors, 'dark');
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
@@ -43,6 +44,6 @@ a {
 
   &:hover::after,
   &:focus::after {
-    background-color: map-get($colors, accent);
+    background-color: map.get($colors, 'accent');
   }
 }
