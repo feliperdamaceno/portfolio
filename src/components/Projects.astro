@@ -1,24 +1,27 @@
 ---
 import type { GitHubRepo } from '@/types'
 
-import { FEATURED_REPOSITORIES } from '@/constants'
+import { getFeaturedRepositories, getResource } from '@/utils'
 
-async function fetchRepos(): Promise<GitHubRepo[]> {
-  const response = await fetch(
-    `${import.meta.env.GITHUB_API_BASE_URL}/users/feliperdamaceno/repos?per_page=50`
-  )
-  const data = ((await response.json()) as GitHubRepo[]) || []
-  const featured = data.filter((repo) => FEATURED_REPOSITORIES.test(repo.name))
-  return featured.reverse()
-}
+const BASE_URL = import.meta.env.GITHUB_API_BASE_URL
+const REPOSITORIES_ENDPOINT = `${BASE_URL}/users/feliperdamaceno/repos`
 
-const repositories = await fetchRepos()
+const [resource, error] = await getResource<GitHubRepo[]>(REPOSITORIES_ENDPOINT)
+const repositories: GitHubRepo[] = getFeaturedRepositories(resource || [])
 ---
 
-<section class="container">
+<section class="container" aria-label="projects">
   <h2 class="section__title">me.<span>projects()</span></h2>
 
   <div class="flow">
+    {
+      error ? (
+        <small class="error">
+          Sorry, GitHub did not returned the repositories 🥲
+        </small>
+      ) : null
+    }
+
     {
       repositories.map((repository) => (
         <div class="repository">
@@ -36,8 +39,10 @@ const repositories = await fetchRepos()
     <a
       class="link"
       href="https://github.com/feliperdamaceno?tab=repositories"
-      target="_blank">View All</a
+      target="_blank"
     >
+      View All
+    </a>
   </div>
 </section>
 
@@ -52,59 +57,65 @@ const repositories = await fetchRepos()
     @media (min-width: 800px) {
       grid-template-columns: 200px 1fr;
     }
+  }
 
-    .flow {
-      --spacing: 2rem;
+  .flow {
+    --spacing: 2rem;
+  }
+
+  .repository {
+    display: grid;
+    justify-items: start;
+    gap: 0.25rem;
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      line-height: 1.2;
+      text-transform: capitalize;
     }
 
-    .repository {
-      display: grid;
-      justify-items: start;
-      gap: 0.25rem;
+    a {
+      position: relative;
 
-      h2 {
-        font-size: 1.15rem;
-        font-weight: 500;
-        line-height: 1.2;
-        text-transform: capitalize;
+      &:before,
+      &:after {
+        color: transparent;
+        position: absolute;
+        transition: color ease-out 125ms;
       }
 
-      a {
-        position: relative;
-
-        &:before,
-        &:after {
-          color: transparent;
-          position: absolute;
-          transition: color ease-out 125ms;
-        }
-
-        &:before {
-          content: '[';
-          left: -0.5em;
-        }
-
-        &:after {
-          content: ']';
-          right: -0.5em;
-        }
-
-        &:hover:before,
-        &:hover:after {
-          color: map.get($colors, 'accent');
-        }
+      &:before {
+        content: '[';
+        left: -0.5em;
       }
 
-      .pill {
-        color: map.get($colors, 'light');
-        background-color: map.get($colors, 'accent');
-        font-size: 0.65em;
-        font-weight: 500;
-        text-transform: uppercase;
-        padding-block: 0.25rem;
-        padding-inline: 0.5rem;
-        border-radius: 0.25rem;
+      &:after {
+        content: ']';
+        right: -0.5em;
+      }
+
+      &:hover:before,
+      &:hover:after {
+        color: map.get($colors, 'accent');
       }
     }
+  }
+
+  .pill {
+    color: map.get($colors, 'light');
+    background-color: map.get($colors, 'accent');
+    font-size: 0.65em;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-block: 0.25rem;
+    padding-inline: 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .error {
+    color: map.get($colors, 'error');
+    font-size: 0.9em;
+    font-weight: 500;
   }
 </style>

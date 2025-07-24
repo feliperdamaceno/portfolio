@@ -2,13 +2,20 @@
 @use 'colors' as *;
 
 ::selection {
-  color: map.get($colors, 'light');
   background-color: map.get($colors, 'dark');
+  color: map.get($colors, 'light');
+}
+
+:is(*, *::after, *::before):focus-visible {
+  outline-color: map.get($colors, 'accent');
+  outline-style: solid;
+  outline-width: 2.5px;
+  outline-offset: 2.5px;
 }
 
 body {
-  color: map.get($colors, dark);
   background-color: map.get($colors, 'white');
+  color: map.get($colors, dark);
   font-family: 'Signika', sans-serif;
   font-size: 1rem;
   font-weight: 300;
@@ -27,23 +34,20 @@ a {
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
-
   display: inline-grid;
   place-items: center;
-  outline: none;
 
   &::after {
-    transition: background-color ease 150ms;
     content: '';
     background-color: transparent;
     border-radius: 50rem;
     width: 1rem;
     height: 0.15rem;
     transform: translateY(-2.5px);
+    transition: background-color ease 150ms;
   }
 
-  &:hover::after,
-  &:focus::after {
+  &:hover::after {
     background-color: map.get($colors, 'accent');
   }
 }

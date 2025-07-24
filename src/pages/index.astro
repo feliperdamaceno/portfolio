@@ -1,14 +1,20 @@
 ---
 import '@/scss/main.scss'
 
-import { Experiences, Footer, Intro, Projects, Skills } from '@/components'
+import {
+  Experiences,
+  Footer,
+  Introduction,
+  Projects,
+  Skills
+} from '@/components'
 
-import { RootLayout } from '@/layouts'
+import { BaseLayout } from '@/layouts'
 ---
 
-<RootLayout title="Felipe Damaceno">
+<BaseLayout title="Felipe Damaceno">
   <main>
-    <Intro />
+    <Introduction />
 
     <div class="flow">
       <Skills />
@@ -17,7 +23,7 @@ import { RootLayout } from '@/layouts'
       <Footer />
     </div>
   </main>
-</RootLayout>
+</BaseLayout>
 
 <style lang="scss">
   main {

@@ -1,46 +1,38 @@
 [
   {
-    "category": "Programming Languages",
+    "category": "Frontend",
     "skills": [
       "HTML",
-      "CSS",
-      "SASS",
+      "CSS / SCSS",
+      "TailwindCSS",
       "JavaScript",
       "TypeScript",
-      "Python",
-      "SQL"
-    ]
-  },
-  {
-    "category": "Tools & Frameworks",
-    "skills": [
-      "Lit",
-      "React",
+      "Lit.js",
+      "Vue.js",
       "Storybook",
-      "Webpack",
-      "Git",
+      "Vite / Webpack"
+    ]
+  },
+  {
+    "category": "Backend",
+    "skills": [
+      "Node.js",
+      "Nuxt.js",
+      "SQL / NoSQL",
       "Docker",
-      "Postman"
+      "Linux",
+      "CI / CD",
+      "REST APIs"
     ]
   },
   {
-    "category": "Design Expertise",
+    "category": "Design",
     "skills": [
+      "Design Systems",
       "Design Tokens",
-      "Figma",
-      "Prototyping",
-      "UX/UI Design",
-      "Accessibility (WCAG)"
-    ]
-  },
-  {
-    "category": "Soft Skills",
-    "skills": [
-      "Leadership",
-      "Mentoring",
-      "Team Collaboration",
-      "Problem Solving",
-      "Time Management"
+      "UX / UI Design",
+      "Web Accessibility",
+      "Figma"
     ]
   }
 ]

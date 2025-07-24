@@ -8,18 +8,17 @@ function getJavaScriptExpYears() {
 }
 ---
 
-<section>
-  <div class="container hero flow">
+<section aria-label="introduction">
+  <div class="container introduction flow">
     <h2>Felipe Damaceno</h2>
 
     <p>
-      <span class="highlight">{'<'}Senior Frontend Developer{'/>'}</span> with {
-        getJavaScriptExpYears
-      }+ years of experience in TypeScript, specialized in crafting responsive,
-      user-centric and accessible web applications. Strong in <span
-        class="highlight">design</span
-      > and <span class="highlight">UX/UI</span>, I combine technical expertise
-      with a <span class="highlight">passion</span> for creating the best user-experience.
+      <strong class="highlight">&lt;Senior Frontend Developer/&gt;</strong>
+      with {getJavaScriptExpYears}+ years of experience in TypeScript,
+      specialized in crafting responsive, user-centric and accessible web
+      applications. Strong in <strong class="highlight">design</strong> and
+      <strong class="highlight">UX/UI</strong>, I combine technical expertise
+      with a <strong class="highlight">passion</strong> for creating the best user-experience.
     </p>
 
     <p>
@@ -32,7 +31,12 @@ function getJavaScriptExpYears() {
         {
           links.map((link: Link) => (
             <li>
-              <a class="link" href={link.href} target="_blank">
+              <a
+                class="link"
+                href={link.href}
+                rel={link.rel}
+                target={link.target}
+              >
                 {link.name}
               </a>
             </li>
@@ -54,15 +58,15 @@ function getJavaScriptExpYears() {
     place-items: center;
   }
 
-  .hero {
+  .highlight {
+    color: map.get($colors, 'accent');
+    font-weight: 600;
+  }
+
+  .introduction {
     font-size: 1.25rem;
     position: relative;
     rotate: -1deg;
-
-    .highlight {
-      color: map.get($colors, 'accent');
-      font-weight: 600;
-    }
 
     h2 {
       font-family: 'Shadows Into Light', cursive;
@@ -90,14 +94,14 @@ function getJavaScriptExpYears() {
       flex-wrap: wrap;
       justify-items: center;
       gap: 1rem;
+    }
 
-      li {
-        display: flex;
-        gap: 1rem;
+    li {
+      display: flex;
+      gap: 1rem;
 
-        &:not(:last-child)::after {
-          content: '\/';
-        }
+      &:not(:last-child)::after {
+        content: '\/';
       }
     }
   }

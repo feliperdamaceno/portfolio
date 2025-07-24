@@ -1,14 +1,20 @@
 [
   {
     "href": "https://www.linkedin.com/in/feliperdamaceno",
-    "name": "Linkedin"
+    "name": "Linkedin",
+    "rel": "external",
+    "target": "_blank"
   },
   {
     "href": "https://github.com/feliperdamaceno",
-    "name": "GitHub"
+    "name": "GitHub",
+    "rel": "external",
+    "target": "_blank"
   },
   {
     "href": "mailto:feliperdamaceno@sent.com",
-    "name": "Email"
+    "name": "Contact",
+    "rel": "author",
+    "target": "_self"
   }
 ]

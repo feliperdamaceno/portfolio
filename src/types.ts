@@ -1,6 +1,8 @@
 export type Link = {
   href: string
   name: string
+  rel: string
+  target: string
 }
 
 export type Experience = {
