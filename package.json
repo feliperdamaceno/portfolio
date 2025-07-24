@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "format": "prettier --write ./src"
+    "format": "prettier --write ./src",
+    "postinstall": "astro telemetry disable"
   },
   "dependencies": {
     "@astrojs/node": "^9.3.0",
